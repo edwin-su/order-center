@@ -3,3 +3,8 @@
 ################################################################################
 
 /Code-V2/OrderCenterClient/bin
+/Code-V2/OrderCenterClient/obj/Debug
+/Code-V2/packages
+/Code-V2/.vs/config
+/Code-V2/.vs/OrderCenterClient/v15/Server/sqlite3
+/Code-V2/.vs/OrderCenterClient/v15/.suo
