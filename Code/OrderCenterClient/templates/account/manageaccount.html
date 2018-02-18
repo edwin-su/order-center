@@ -1,0 +1,104 @@
+﻿<div class="tabs-panel is-active" id="panel1">
+    <h4>人员列表</h4>
+    <!-- ko foreach: operatorList -->
+    <div class="media-object stack-for-small">
+        <div class="media-object-section">
+            <img class="thumbnail" src="/assets/img/face.jpg" data-bind="css:{'gray':!IsActive()}">
+            <h5 data-bind="text:OperatorName">&nbsp;</h5>
+        </div>
+        <div class="media-object-section full-width">
+            <div class="row">
+                <div class="small-12 medium-6 large-6 columns">
+                    <label>
+                        登陆名：
+                        <input type="text" data-bind="value:UserName, attr:{disabled:!IsActive()}" placeholder="请输入登陆名">
+                    </label>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <label>
+                        登陆密码：
+                        <input type="password" data-bind="value:Password, attr:{disabled:!IsActive()}" placeholder="请输入密码">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-6 medium-3 large-2 columns">
+                    <label>
+                        查看订单：
+                        <input data-bind="checked:AllowToViewOrder, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+                <div class="small-6 medium-3 large-2 columns">
+                    <label>
+                        编辑配餐：
+                        <input data-bind="checked:AllowToChangeOrder, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+                <div class="small-6 medium-3 large-2 columns">
+                    <label>
+                        修改菜品：
+                        <input data-bind="checked:AllowToModifyMeal, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+                <div class="small-6 medium-3 large-2 columns">
+                    <label>
+                        销量统计：
+                        <input data-bind="checked:AllowToViewSales, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+                <div class="small-6 medium-3 large-2 columns">
+                    <label>
+                        账户管理：
+                        <input data-bind="checked:AllowToModifyAccount, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+                <div class="small-6 medium-3 large-2 columns end">
+                    <label>
+                        支付管理：
+                        <input data-bind="checked:AllowToModifyPaymentMethod, attr:{disabled:!IsActive()}" type="checkbox">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-4 large-4 columns end">
+                    <a class="button expanded" data-bind="click:$parent.updateAccount.bind($data,$data), css:{'button-disabled':!IsActive()}">更新</a>
+                </div>
+                <div class="small-12 medium-4 large-4 columns end">
+                    <a class="button expanded" data-bind="click:$parent.changeAccountActiveStatus.bind($data,$data), text:IsActive()?'禁用':'启用'">禁用</a>
+                </div>
+                <div class="small-12 medium-4 large-4 columns end">
+                    <a class="button expanded" data-bind="click:$parent.deleteAccount.bind($data,$data)">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <!--/ko-->
+    <!--ko with:defaultOperator-->
+    <div class="new-account">
+        <h4>创建初始账户</h4>
+        <div class="row">
+            <div class="small-12 medium-6 large-6 columns">
+                <label>
+                    登陆名：
+                    <input type="text" placeholder="请输入登陆名" data-bind="value:UserName">
+                </label>
+            </div>
+            <div class="small-12 medium-6 large-6 columns">
+                <label>
+                    登陆密码：
+                    <input type="password" placeholder="请输入密码" data-bind="value:Password">
+                </label>
+            </div>
+        </div>
+        <!--ko if:$parent.hasError()-->
+        <div class="row">
+            <p data-bind="text:$parent.errorMsg" class="error">&nbsp;</p>
+        </div>
+        <!--/ko-->
+        <div class="row">
+            <a class="small-12 medium-6 large-6 columns end button button-red" data-bind="click:$parent.createNewDefaultOperator.bind($data,$data)">创建</a>
+        </div>
+    </div>
+    <!--/ko-->
+</div>

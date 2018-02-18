@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订餐中心</title>
+    <link href="~/assets/css/foundation.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/foundation-icons.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="row login-main">
+        <div class="medium-1 large-1 columns hidden">&nbsp;</div>
+        <div class="medium-5 large-7 columns">
+            <h1>temptemp订餐系统</h1>
+            <p class="subheader">
+                在满足病人的每日订餐需求的前提下，提供医护工作者的饮食服务，更有果汁酸奶供大家选购。
+            </p>
+            <br />
+            <br />
+        </div>
+
+        <div class="medium-5 large-3 columns">
+            <div class="callout secondary">
+                <form>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <label>
+                                用户名：
+                                <input type="text" placeholder="请输入用户名">
+                            </label>
+                        </div>
+                        <div class="small-12 columns">
+                            <label>
+                                密&nbsp;&nbsp;&nbsp;码：
+                                <input type="password" placeholder="请输入密码">
+                            </label>
+                            <button type="submit" class="button">登&nbsp;&nbsp;&nbsp;陆</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="medium-1 large-1 columns hidden">&nbsp;</div>
+    </div>
+    <footer>
+        <div class="copyright">
+            Copyright
+        </div>
+    </footer>
+    <script type="text/javascript">
+        //window.onload = function () {
+        //    document.getElementById("login-button").onclick = doLogin;
+        //    document.getElementById("username").onfocus = inputFocus;
+        //    document.getElementById("password").onfocus = inputFocus;
+        //    document.getElementById("password").onkeypress = function (e) {
+        //        if (e && e.keyCode == 13) {
+        //            doLogin();
+        //        }
+        //    }
+
+        //    function inputFocus() {
+        //        document.getElementById("login-error").innerText = "";
+        //    }
+
+        //    function doLogin() {
+        //        document.getElementById("login-error").innerText = "";
+        //        var userName = document.getElementById("username").value;
+        //        var password = document.getElementById("password").value;
+
+        //        if (userName.length == 0 || password.length == 0) {
+        //            document.getElementById("login-error").innerText = "用户名或密码不能为空";
+        //            return;
+        //        }
+
+        //        var timeZone = new Date().getTimezoneOffset();
+        //        var ajaxUrl = "/Account/Login";
+        //        jsonData = JSON.stringify({
+        //            "userName": userName,
+        //            "password": password
+        //        });
+        //        var xhr = new XMLHttpRequest();
+        //        xhr.open("POST", ajaxUrl);
+        //        xhr.setRequestHeader('Content-Type', 'application/json');
+        //        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        //        xhr.setRequestHeader('TimeZone', timeZone);
+
+        //        xhr.timeout = 6000;
+        //        xhr.ontimeout = function (e) {
+
+        //            return;
+        //        };
+
+        //        xhr.onreadystatechange = function () {
+        //            if (this.readyState == 4) {
+        //                if (this.status == 200 || this.status == 302) {
+        //                    var result = JSON.parse(this.responseText);
+        //                    if (!!result && result > 0) {
+        //                        sessionStorage.setItem("userId", result);
+        //                        location.href = '/Home/index';
+        //                    }
+        //                }
+        //                if (this.status == 500) {
+        //                    document.getElementById("login-error").innerText = "用户名或密码错误";
+        //                }
+        //                if (this.status == 0) {
+        //                    document.getElementById("login-error").innerText = "连接失败，请检查网络或联系管理员";
+        //                }
+        //            } else {
+        //                if (this.status == 404) {
+
+        //                }
+
+        //                try {
+        //                    if (isJson(JSON.parse(this.responseText).Message)) {
+        //                        var resultCode = JSON.parse(JSON.parse(this.responseText).Message).exceptionCode;
+
+        //                    }
+
+        //                    if (!isJson(this.responseText)) {
+
+        //                    }
+        //                } catch (e) {
+
+        //                }
+        //            }
+        //        };
+
+        //        xhr.onerror = function (e) {
+        //        };
+        //        xhr.send(jsonData);
+        //    }
+
+        //    function isJson(content) {
+        //        try {
+        //            JSON.parse(content);
+        //            return true;
+        //        } catch (e) {
+        //            return false;
+        //        }
+        //    }
+        //}
+    </script>
+</body>
+</html>

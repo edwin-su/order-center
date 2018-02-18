@@ -1,0 +1,117 @@
+﻿<div>
+    <section class="summary">
+        <label class="sub-title">
+            订单查询 ：
+        </label>
+        <hr />
+        <div class="filter row">
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    日期 ：
+                </span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <span>
+                    <select data-bind="options: dates,
+                                optionsText: 'Key',
+                                optionsValue: 'Value',
+                                event:{change:fitlerByDate.bind(null, $element.value)}">
+                        <option>所有</option>
+                    </select>
+                </span>
+            </div>
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    类型 ：
+                </span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <span>
+                    <select data-bind="event:{change: filterByMealType.bind(null, $element.value)}">
+                        <option value="0">所有</option>
+                        <option value="1">早餐</option>
+                        <option value="2">中餐</option>
+                        <option value="3">晚餐</option>
+                    </select>
+                </span>
+            </div>
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    病区 ：
+                </span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <span>
+                    <select data-bind="options: patientAreas,
+                                optionsText: 'AreaCode',
+                                optionsValue: 'Id',
+                                event:{change:filterByPatientArea.bind(null, $element.value)}">
+                        <option>所有</option>
+                    </select>
+                </span>
+            </div>
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    菜品 ：
+                </span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <span>
+                    <select data-bind="options: meals,
+                                   optionsText: 'Name',
+                                   optionsValue: 'Id',
+                                   event:{change: filterByMeal.bind(null, $element.value)}">
+                        <option>所有</option>
+                        <option>红烧鱼</option>
+                    </select>
+                </span>
+            </div>
+            
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    床号：
+                </span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <span>
+                    <input type="tel" data-bind="value: filterData.bedNumber,valueUpdate:'input'" />
+                </span>
+            </div>
+            <div class="small-12 medium-2 large-2 columns">
+                <span>
+                    <a class="button  expanded" data-bind="click:filterByBedNumber.bind($data,$data)">查询床号</a>
+                </span>
+            </div>
+            <div class="small-12 medium-2 large-2 columns">
+                <span data-bind="text: '数量 ：' + (!!orders()?orders().length:0)">
+                    
+                </span>
+            </div>
+        </div>
+        <hr />
+        <table class="block-center">
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>订单生效日期</th>
+                    <th>菜品</th>
+                    <th>病区</th>
+                    <th>床号</th>
+                    <th>支付方式</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ko foreach: orders -->
+                <tr>
+                    <td data-bind="text:ReceiptNumber">A区</td>
+                    <td data-bind="text:OrderAffectDay">15</td>
+                    <td class="meal_order_details" data-bind="html:MealDetails.replace(/,/g,'<br/>')">16</td>
+                    <td data-bind="text:AreaCode">18</td>
+                    <td data-bind="text:BedNumber">19</td>
+                    <td data-bind="text:PaymentMethod">120</td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+    </section>
+</div>

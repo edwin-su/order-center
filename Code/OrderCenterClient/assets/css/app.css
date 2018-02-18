@@ -1,0 +1,182 @@
+﻿.main{
+    padding:55px;
+}
+
+.empty {
+    height: 50px;
+    visibility:hidden;
+}
+.main-header {
+    background-color: #272636;
+    display: block;
+    height: 70px;
+    width:100%;
+    position:fixed;
+    color:white;
+    z-index:10;
+}
+.menu-button {
+    cursor:pointer;
+    padding: 10px;
+}
+.menu-button a{
+    color:black;
+}
+.menu-button h5 {
+    letter-spacing: 3px;
+}
+header div{
+    display:inline-block;
+    margin:10px auto;
+    color:white;
+}
+.logo {
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.back-button {
+    float: left;
+    position: absolute;
+    margin-top: 15px;
+    margin-left:20px;
+}
+.button-red {
+    background-color: red !important;
+}
+
+.button-disabled {
+    background-color: lightgray !important;
+}
+
+.new-account {
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+.error {
+    color:red;
+}
+.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+.full-width {
+    width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+    .main {
+        padding: 25px;
+    }
+    .main-header {
+        height: 50px;
+    }
+    .logo {
+        margin-top: 2px;
+    }
+    .back-button {
+        margin-top: 7px;
+        margin-left: 5px;
+    }
+}
+
+.button-red{
+    background-color:red;
+}
+.button-red:hover {
+    background-color: red;
+}
+#make-order h6 {
+    padding-top: 7px;
+}
+
+.selected-meal {
+    box-shadow: 0 0 0 3px red !important;
+}
+.meal-title{
+    font-size: 20px;
+}
+.changeToToday{
+    padding-top: 5px;
+}
+/*login*/
+.login-main {
+    padding-top: 10vh;
+}
+
+footer {
+    position: fixed;
+}
+
+.copyright {
+    color: lightgrey;
+    width: 370px;
+    margin: 70px auto;
+}
+
+
+@media only screen and (min-width:1023px) and (max-height:769px) {
+    .login-main {
+        padding-top: 20vh;
+    }
+
+    .copyright {
+        color: lightgrey;
+        width: 370px;
+        margin: 70px auto;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .login-main {
+        padding-top: 5vh;
+    }
+
+    .copyright {
+        color: lightgrey;
+        width: 370px;
+        margin: 70px auto;
+    }
+}
+
+/******common******/
+.top-bar {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    background-color: #272636;
+    height: 70px;
+    color: white;
+}
+
+.top-bar-left {
+    margin-top: 15px;
+    padding-left: 3rem;
+    text-align: left;
+}
+
+.top-bar-center {
+    margin-top: 15px;
+}
+
+.top-bar-right {
+    margin-top: 15px;
+    color: #272636;
+    text-align:right;
+    padding-right: 3rem;
+}
+
+.top-bar-right a {
+    color: white;
+}
+
+.meal-body .column:last-child,
+.meal-body .columns:last-child {
+    float: left;
+}

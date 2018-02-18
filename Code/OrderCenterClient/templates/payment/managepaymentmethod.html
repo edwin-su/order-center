@@ -1,0 +1,26 @@
+﻿<div class="row small-up-2 large-up-4">
+    <div class="column">
+        <img class="thumbnail" src="/assets/img/Cash.png" data-bind="attr:{class: enableCash()?'thumbnail':'thumbnail gray'}">
+        <h5>现金</h5>
+        <p>Cash</p>
+        <a href="#" class="button expanded" data-bind="text: enableCash()?'禁用':'启用', css:{'button-red':!enableCash()}, click:togglePaymentMethod.bind($data,paymentType.cash)">启用</a>
+    </div>
+    <div class="column">
+        <img class="thumbnail" src="/assets/img/Alipay.png" data-bind="attr:{class: enableAlipay()?'thumbnail':'thumbnail gray'}">
+        <h5>支付宝</h5>
+        <p>alipay</p>
+        <a href="#" class="button expanded" data-bind="text: enableAlipay()?'禁用':'启用', css:{'button-red':!enableCash()}, click:togglePaymentMethod.bind($data,paymentType.alipay)">启用</a>
+    </div>
+    <div class="column">
+        <img class="thumbnail gray" src="/assets/img/Wechat.png" data-bind="attr:{class: enableWechat()?'thumbnail':'thumbnail gray'}">
+        <h5>微信</h5>
+        <p>Wechat</p>
+        <a href="#" class="button expanded" data-bind="text: enableWechat()?'禁用':'启用', css:{'button-red':!enableCash()}, click:togglePaymentMethod.bind($data,paymentType.wechat)">启用</a>
+    </div>
+    <div class="column">
+        <img class="thumbnail" src="/assets/img/PrepaidCard.png" data-bind="attr:{class: enablePrepaidCard()?'thumbnail':'thumbnail gray'}">
+        <h5>预付卡</h5>
+        <p>PrepaidCard</p>
+        <a href="#" class="button expanded" data-bind="text: enablePrepaidCard()?'禁用':'启用', css:{'button-red':!enableCash()}, click:togglePaymentMethod.bind($data,paymentType.prepaidcard)">启用</a>
+    </div>
+</div>

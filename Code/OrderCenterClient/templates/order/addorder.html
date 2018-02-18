@@ -1,0 +1,78 @@
+﻿<div id="make-order">
+    <div class="row">
+        <h3 class="small-12 columns">点菜信息 </h3>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="small-5 medium-2 large-2 columns">
+            <h6>病区：</h6>
+        </div>
+        <div class="small-7 medium-4 large-4 columns">
+            <select data-bind="options: areas,  optionsText: 'AreaName', optionsValue: 'AreaId', selectedOptions: selectedOption,
+          event:{change:whenchage}, optionsCaption: '选择病区'">  </select>
+        </div>
+        <div class="small-5 medium-2 large-2 columns">
+            <h6 >床号：</h6>
+        </div>
+        <div class="small-7 medium-4 large-4 columns">
+            <input type="text" placeholder="请输入床号" data-bind="value:mealInfo" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-5 medium-2 large-2 columns">
+            <h6>午餐：</h6>
+        </div>
+        <div class="small-7 medium-4 large-4 columns">
+            <input type="text" placeholder="请在下面选择配餐" data-bind="value:lunchMealName" readonly />
+        </div>
+        <div class="small-5 medium-2 large-2 columns">
+            <h6>晚餐：</h6>
+        </div>
+        <div class="small-7 medium-4 large-4 columns">
+            <input type="text" placeholder="请在下面选择配餐" data-bind="value:dinnerMealName" readonly />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-5 medium-2 large-2 columns">
+            <h6>早餐：</h6>
+        </div>
+        <div class="small-7 medium-4 large-4 columns end">
+            <input type="text" placeholder="请输入早餐内容" data-bind="value:breakfast" />
+        </div>
+    </div>
+    <div class="row">
+        <a class="button expanded">确认订单，去支付</a>
+    </div>
+    <hr />
+    <div class="row">
+        <h4 class="small-12 columns end">午餐 </h4>
+    </div>
+    <div>
+        <div class="row small-up-2 large-up-4">
+            <!-- ko foreach: lunchMeals -->
+            <div class="column">
+                <img class="thumbnail" data-bind="attr: {src:'/assets/img/meal' + $index() + '.png'}">
+                <h5 data-bind="text:MealName">&nbsp;</h5>
+                <p data-bind="text:MealDescription">&nbsp;</p>
+                <a href="#" class="button expanded">点单</a>
+            </div>
+            <!--/ko-->
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <h4 class="small-12 columns end">晚餐 </h4>
+    </div>
+    <div>
+        <div class="row small-up-2 large-up-4">
+            <!-- ko foreach: dinnerMeals -->
+            <div class="column">
+                <img class="thumbnail" data-bind="attr: {src:'/assets/img/meald' + $index() + '.png'}">
+                <h5 data-bind="text:MealName">&nbsp;</h5>
+                <p data-bind="text:MealDescription">&nbsp;</p>
+                <a href="#" class="button expanded">点单</a>
+            </div>
+            <!--/ko-->
+        </div>
+    </div>
+</div>

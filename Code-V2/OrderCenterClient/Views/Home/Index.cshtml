@@ -1,0 +1,6 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div data-bind="template:{name: page().name + '-html', data:page().data,afterRender:afterRender}"></div>
+<script src="/Scripts/lib/require.js" data-main="/Scripts/main"></script>

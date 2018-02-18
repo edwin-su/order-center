@@ -1,0 +1,112 @@
+﻿<div>
+    <div class="header">
+        <h3>
+            配置套餐
+        </h3>
+        <!--ko if: isSelectMeal()-->
+        <div class="meal-header">
+            <a data-bind="click: back">返回</a>
+        </div>
+        <!--/ko-->
+        <hr />
+    </div>
+    <section>
+        <div class="row">
+            <div class="columns small-2">
+                <ul class="configure-meal-menu">
+                    <li><a data-bind="css:{'light-grey': mealDay() === 1},click: selectDay.bind(null, 1)">星期一</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 2},click: selectDay.bind(null, 2)">星期二</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 3},click: selectDay.bind(null, 3)">星期三</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 4},click: selectDay.bind(null, 4)">星期四</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 5},click: selectDay.bind(null, 5)">星期五</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 6},click: selectDay.bind(null, 6)">星期六</a></li>
+                    <li><a data-bind="css:{'light-grey': mealDay() === 0},click: selectDay.bind(null, 7)">星期日</a></li>
+                </ul>
+            </div>
+            <div class="columns small-10">
+                <p>已配菜品:</p>
+                <hr />
+
+                <!--ko ifnot:isSelectMeal() -->
+                <div class="row">
+                    <div class="columns">
+                        <fieldset class="configure-meal-body">
+                            <legend>&nbsp;&nbsp;中餐&nbsp;&nbsp;</legend>
+                            <div class="row">
+                                <!--ko foreach: scheduleMeals -->
+                                <!--ko if: MealType == 2-->
+                                <div class="columns small-6 medium-3 large-2">
+                                    <div>
+                                        <img class="thumbnail" src="/assets/img/food.jpg">
+                                        <small data-bind="text: Meal.Name"></small>
+                                        <small data-bind="text: Meal.Price"></small>
+                                        <a><small data-bind="click: $parent.deleteSchedule.bind(null,Id)">删除</small></a>
+                                    </div>
+                                </div>
+                                <!--/ko-->
+                                <!--/ko-->
+                                <div class="columns small-6 medium-3 large-2">
+                                    <div>
+                                        <a data-bind="click: selectMeal.bind(null, 2)">
+                                            <img class="thumbnail" src="/assets/img/add.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="configure-meal-body">
+                            <legend>&nbsp;&nbsp;晚餐&nbsp;&nbsp;</legend>
+                            <div class="row">
+                                <!--ko foreach: scheduleMeals -->
+                                <!--ko if: MealType == 3-->
+                                <div class="columns small-6 medium-3 large-2">
+                                    <div>
+                                        <img class="thumbnail" src="/assets/img/food.jpg">
+                                        <small data-bind="text: Meal.Name"></small>
+                                        <small data-bind="text: Meal.Price"></small>
+                                        <a><small data-bind="click: $parent.deleteSchedule.bind(null,$data)">删除</small></a>
+                                    </div>
+                                </div>
+                                <!--/ko-->
+                                <!--/ko-->
+                                <div class="columns small-6 medium-3 large-2">
+                                    <div>
+                                        <a data-bind="click: selectMeal.bind(null, 3)">
+                                            <img class="thumbnail" src="/assets/img/add.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <!--/ko-->
+                <!--ko if: isSelectMeal()-->
+                <div class="row">
+                    <!--ko foreach: displayMeals -->
+                    <div class="columns small-6 medium-3 large-2">
+                        <div>
+                            <img class="thumbnail" src="/assets/img/food.jpg" data-bind="attr:{alt: Description}">
+                            <small data-bind="text: $data.Name"></small><br />
+                            <small data-bind="text: Price + '￥'"></small>&nbsp;&nbsp;
+                            <!--ko if: isAdded() -->
+                            <small>已添加</small>
+                            <!--/ko-->
+                            <!--ko if: !isAdded() -->
+                            <a data-bind="click: $parent.configureMeal.bind(null, $data)"><small>添加</small></a>
+                            <!--/ko-->
+                        </div>
+                    </div>
+                    <!--/ko-->
+                    <!--ko if: meals()&& meals().length==0 -->
+                    <div class="text-center">
+                        <small>请添加菜品</small>
+                    </div>
+                    <!--/ko-->
+                </div>
+                <!--/ko-->
+            </div>
+        </div>
+    </section>
+</div>

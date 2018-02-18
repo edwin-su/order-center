@@ -1,0 +1,62 @@
+﻿<div class="row small-up-2 medium-up-3 large-up-4">
+    <div class="column menu-button">
+        <a href="/addorder">
+            <img class="thumbnail" src="/assets/img/make-order.png">
+            <h5>进行点餐</h5>
+        </a>
+    </div>
+    <!-- ko if : AllowToViewOrder()-->
+    <div class="column menu-button">
+        <a href="/summary">
+            <img class="thumbnail" src="/assets/img/review-order.png">
+            <h5>查看订单</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <!-- ko if : AllowToChangeOrder()-->
+    <div class="column menu-button">
+        <a href="/configuremeal">
+            <img class="thumbnail" src="/assets/img/configure-meal.png">
+            <h5>编辑配餐</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <!-- ko if : AllowToModifyMeal()-->
+    <div class="column menu-button">
+        <a href="/meal">
+            <img class="thumbnail" src="/assets/img/modify-meal.png">
+            <h5>修改菜品</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <!-- ko if : AllowToViewSales()-->
+    <div class="column menu-button">
+        <a href="/report">
+            <img class="thumbnail" src="/assets/img/view-sales.png">
+            <h5>销量统计</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <!-- ko if : AllowToModifyAccount()-->
+    <div class="column menu-button">
+        <a href="/manageaccount">
+            <img class="thumbnail" src="/assets/img/manage-users.png">
+            <h5>账户管理</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <!-- ko if : AllowToModifyPaymentMethod()-->
+    <div class="column menu-button">
+        <a href="/managepaymentmethod">
+            <img class="thumbnail" src="/assets/img/configure-paymentmethod.png">
+            <h5>支付管理</h5>
+        </a>
+    </div>
+    <!--/ko-->
+    <div class="column menu-button">
+        <a href="/login">
+            <img class="thumbnail" src="/assets/img/logout.png">
+            <h5>退出系统</h5>
+        </a>
+    </div>
+</div>

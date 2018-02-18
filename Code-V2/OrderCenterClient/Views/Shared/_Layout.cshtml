@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/assets/css/foundation.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/foundation-icons.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/app.css" rel="stylesheet" type="text/css">
+    <title>智能订餐系统</title>
+
+</head>
+<body>
+
+
+    <div class="top-bar row" id="topbar">
+        <div class="small-4 columns top-bar-left">
+            <a href="/home"><img src="~/assets/img/back.jpg" /></a>
+        </div>
+        <div class="small-4 columns top-bar-center">
+            智能订餐系统
+        </div>
+        <div class="small-4 columns top-bar-right">
+            <a data-bind="click: $root.logout">退出</a>
+        </div>
+    </div>
+    <div class="loading" id="ajax-loading-bg" style="display:none">
+    </div>
+    <label id="ajax-loading-icon" class="loading" style="display:none"></label>
+    <div class="empty">
+        &nbsp;
+    </div>
+    <div class="main">
+        @RenderBody()
+    </div>
+    <script>
+        var pathName = window.location.pathname;
+        var topbar = document.getElementById("topbar");
+        if (!!pathName && (pathName == '/')) {
+            topbar.className = 'top-bar row display-none';
+        } else {
+            topbar.className = 'top-bar row';
+        }
+    </script>
+</body>
+</html>

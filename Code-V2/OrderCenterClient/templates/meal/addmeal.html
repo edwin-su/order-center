@@ -1,0 +1,125 @@
+﻿<div>
+    <div class="header">
+        <h2>
+            添加菜品
+        </h2>
+        <hr/>
+    </div>
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="vvtruy-orbit">
+        <ul class="orbit-container" tabindex="0" style="height: 505.875px;">
+            <a class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</a>
+            <a class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</a>
+            <li class="orbit-slide" data-slide="0" style="max-height: 505.875px; display: none; position: relative; top: 0px;">
+                <img src="/assets/img/foods.jpg">
+            </li>
+            <li class="orbit-slide" data-slide="1" style="position: relative; max-height: 505.875px; top: 0px; display: none;">
+                <img src="/assets/img/foods.jpg">
+            </li>
+            <li class="orbit-slide slide-out-left mui-leave mui-leave-active" data-slide="2" style="position: relative; max-height: 505.875px; top: 0px; display: block;" aria-live="polite">
+                <img src="/assets/img/foods.jpg">
+            </li>
+            <li class="orbit-slide is-active slide-in-right mui-enter mui-enter-active" data-slide="3" style="position: absolute; max-height: 505.875px; top: 0px; display: block;">
+                <img src="/assets/img/foods.jpg">
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="small-12 medium-3 large-3 columns">
+            <img src="/assets/img/foods.jpg" />
+        </div>
+        <div class="small-12 medium-9 large-9 columns" id="addmeal">
+            <div class="row">
+                <div class="small-12 medium-2 large-2 columns">
+                    <span>菜名：</span>
+                </div>
+                <div class="small-12 medium-4 large-4 columns">
+                    <input data-bind="value:name" />
+                </div>
+                
+                <div class="small-12 medium-2 large-2 columns">
+                    <span>价格：</span>
+                </div>
+                <div class="small-12 medium-4 large-4 columns">
+                    <input id="price" data-bind="value:price" />
+                </div>
+                <div class="small-12 medium-2 large-2 columns">
+                    <span>名细：</span>
+                </div>
+                <div class="small-12 medium-4 large-4 columns">
+                    <input data-bind="value: description" />
+                </div>
+                <div class="small-12 medium-2 large-4 columns">
+                    <span>早餐：</span>
+                </div>
+                <div class="small-12 medium-2 large-4 columns">
+                    <input data-bind="checked:isBreakfast" type="checkbox" />
+                </div>
+                <div class="small-12 medium-3 large-3 columns end">
+                    <a class="button expanded" data-bind="click: save">保存</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="small-12 medium-4 large-4 columns">
+            
+        </div>
+    </div>-->
+    
+    <!--<section class="addmeal-body form">
+        <div class="row">
+            <div class="columns large-4 small-3">
+                <label class="form-label">菜名：</label>
+            </div>
+            <div class="columns large-8 small-9">
+                <input data-bind="value:name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns large-4 small-3">
+                <label class="form-label">价格：</label>
+            </div>
+            <div class="columns large-8 small-9">
+                <input id="price"  data-bind="value:price" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns large-4 small-3">
+                <label class="form-label">早餐：</label>
+            </div>
+            <div class="columns large-8 small-9">
+                <input data-bind="checked:isBreakfast" type="checkbox" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns large-4 small-3">
+                <label class="form-label">名细：</label>
+            </div>
+            <div class="columns large-8 small-9">
+                <textarea rows="6" data-bind="value: description" />
+            </div>
+        </div>
+        <div class="form-button">
+            <a class="button" data-bind="click: save">保存</a>
+        </div>
+    </section>-->
+</div>

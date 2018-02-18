@@ -1,0 +1,35 @@
+﻿.login-main {
+    padding-top: 30vh;
+}
+
+footer{
+    position:fixed;
+}
+.copyright {
+    color: lightgrey;
+    width: 370px;
+    margin: 70px auto;
+}
+
+@media only screen and (min-width:1023px) and (max-height:769px){
+    .login-main {
+        padding-top: 30vh;
+    }
+    .copyright {
+        color: lightgrey;
+        width: 370px;
+        margin: 70px auto;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .login-main {
+        padding-top: 15vh;
+    }
+
+    .copyright {
+        color: lightgrey;
+        width: 370px;
+        margin: 70px auto;
+    }
+}
