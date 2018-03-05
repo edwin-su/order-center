@@ -13,9 +13,8 @@
             contentType: "application/json",
             data: JSON.stringify({ "userName": self.userName(), "password": self.password() })
         }).done(function (data) {
-            if (!!data && data.LoginSuccess) {
-                app.goTo("/home");
-            }
+            app.permissions(data);
+            app.goTo("/home");
         });
     }
 

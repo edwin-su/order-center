@@ -1,11 +1,11 @@
-﻿<div class="row small-up-2 medium-up-3 large-up-4">
+﻿<div class="row small-up-2 medium-up-3 large-up-4" data-bind="with: $root.permissions">
     <div class="column menu-button">
         <a href="/addorder">
             <img class="thumbnail" src="/assets/img/make-order.png">
             <h5>进行点餐</h5>
         </a>
     </div>
-    <!-- ko if : AllowToViewOrder()-->
+    <!-- ko if : AllowToViewOrder -->
     <div class="column menu-button">
         <a href="/summary">
             <img class="thumbnail" src="/assets/img/review-order.png">
@@ -13,7 +13,7 @@
         </a>
     </div>
     <!--/ko-->
-    <!-- ko if : AllowToChangeOrder()-->
+    <!-- ko if : AllowToChangeOrder -->
     <div class="column menu-button">
         <a href="/configuremeal">
             <img class="thumbnail" src="/assets/img/configure-meal.png">
@@ -21,7 +21,7 @@
         </a>
     </div>
     <!--/ko-->
-    <!-- ko if : AllowToModifyMeal()-->
+    <!-- ko if : AllowToModifyMeal -->
     <div class="column menu-button">
         <a href="/meal">
             <img class="thumbnail" src="/assets/img/modify-meal.png">
@@ -29,7 +29,7 @@
         </a>
     </div>
     <!--/ko-->
-    <!-- ko if : AllowToViewSales()-->
+    <!-- ko if : AllowToViewSales -->
     <div class="column menu-button">
         <a href="/report">
             <img class="thumbnail" src="/assets/img/view-sales.png">
@@ -37,7 +37,7 @@
         </a>
     </div>
     <!--/ko-->
-    <!-- ko if : AllowToModifyAccount()-->
+    <!-- ko if : AllowToModifyAccount -->
     <div class="column menu-button">
         <a href="/manageaccount">
             <img class="thumbnail" src="/assets/img/manage-users.png">
@@ -45,7 +45,7 @@
         </a>
     </div>
     <!--/ko-->
-    <!-- ko if : AllowToModifyPaymentMethod()-->
+    <!-- ko if : AllowToModifyPaymentMethod -->
     <div class="column menu-button">
         <a href="/managepaymentmethod">
             <img class="thumbnail" src="/assets/img/configure-paymentmethod.png">

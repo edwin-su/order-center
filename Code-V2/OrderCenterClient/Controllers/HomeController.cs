@@ -34,7 +34,7 @@ namespace OrderCenterClient.Controllers
         public ActionResult Login(string userName, string password)
         {
             _homeLogic.Login(userName, password);
-            return Json(new { LoginSuccess = true});
+            return Json(_homeLogic.GetOperatorPermission());
         }
 
         [AllowAnonymous]

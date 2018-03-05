@@ -3,9 +3,36 @@ define(['page-disposer', 'ko', 'director', 'validation'], function (PageDisposer
 
     var initialRun = true;
 
+    function hasPermission(pageName) {
+        switch (pageName) {
+            case "summary":
+                return Page.permissions() && Page.permissions().AllowToViewOrder;
+            case "configuremeal":
+                return Page.permissions() && Page.permissions().AllowToChangeOrder;
+            case "meal":
+                return Page.permissions() && Page.permissions().AllowToModifyMeal;
+            case "report":
+                return Page.permissions() && Page.permissions().AllowToViewSales;
+            case "manageaccount":
+                return Page.permissions() && Page.permissions().AllowToModifyAccount;
+            case "managepaymentmethod":
+                return Page.permissions() && Page.permissions().AllowToModifyPaymentMethod;
+            default:
+                return true;
+                break;
+        }
+
+        return true;
+    }
+
     var Page = {
         init: function (name, data, path, controller) {
             this.loading = false;
+
+            if (!hasPermission(name)) {
+                Page.goTo("/home");
+                return;
+            }
 
             name = name.toLowerCase();
 
@@ -78,7 +105,8 @@ define(['page-disposer', 'ko', 'director', 'validation'], function (PageDisposer
         title: function () {
             //return this.page.name.titleize(); // override in RootBindings as needed
             return "OrderCenter";
-        }
+        },
+        permissions: ko.observable()
     };
 
     Page.goTo = function (url) {
