@@ -106,7 +106,7 @@ define(['page-disposer', 'ko', 'director', 'validation'], function (PageDisposer
             //return this.page.name.titleize(); // override in RootBindings as needed
             return "OrderCenter";
         },
-        permissions: ko.observable()
+        permissions: ko.observable(permissions)
     };
 
     Page.goTo = function (url) {
@@ -122,6 +122,7 @@ define(['page-disposer', 'ko', 'director', 'validation'], function (PageDisposer
     }
 
     Page.logout = function () {
+        Page.permissions(null);
         require(["utility"], function (utility) {
             utility.baseAjax({
                 url: '/Home/Logout',

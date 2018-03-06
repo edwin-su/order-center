@@ -1,4 +1,5 @@
-﻿using OrderCenterClient.Consts;
+﻿using Newtonsoft.Json;
+using OrderCenterClient.Consts;
 using OrderCenterClient.Interfaces;
 using OrderCenterClient.Models;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace OrderCenterClient.Controllers
                 return RedirectToRoute("Login");
             }
 
+            var permissions = _cache.Get<OperatorPermission>(SessionConstant.USER_PERMISSION_ID);
+
+            ViewBag.Permissions = JsonConvert.SerializeObject(permissions);
+
             return View();
         }
 
@@ -34,7 +39,10 @@ namespace OrderCenterClient.Controllers
         public ActionResult Login(string userName, string password)
         {
             _homeLogic.Login(userName, password);
-            return Json(_homeLogic.GetOperatorPermission());
+
+            var permissions = _homeLogic.GetOperatorPermission();
+            _cache.Add<OperatorPermission>(SessionConstant.USER_PERMISSION_ID, permissions);
+            return Json(permissions);
         }
 
         [AllowAnonymous]
